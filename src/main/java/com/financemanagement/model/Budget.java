@@ -2,6 +2,9 @@ package com.financemanagement.model;
 
 import java.util.Date;
 
+import com.financemanagement.enums.PhotoShootPlan;
+import com.financemanagement.enums.PhotoShootType;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,33 +15,32 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "tb_client")
-public class Client {
-
+@Table(name = "tb_budget")
+public class Budget {
+	
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
+	
+	@Column
+	private String clientName;
+	
+	@Column
+	private String clientPhone;
+	
+	@Column
+	private Date budgetDate;
+	
 	@Column(nullable = false)
-	private String fullname;
+	private Date contactDate;
 	
 	@Column
-	private Date dateOfBirth;
+	private PhotoShootType photoShootType;
 	
 	@Column
-	private String phone;
-	
+	private PhotoShootPlan photoShootPlan;
+
 	@Column
-	private String instagram;
-	
-	@Column
-	private String email;
-	
-	@Column
-	private String profession;
-	
-	@Column
-	private String observation;
-	
+	private Product product;
 }

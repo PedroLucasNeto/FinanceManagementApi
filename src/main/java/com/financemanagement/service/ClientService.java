@@ -31,10 +31,10 @@ public class ClientService {
 				.orElseThrow(() -> new Exception("We're sorry. We could not find a Client with this ID: " + id));
 		updatedClient.setFullname(client.getFullname());
 		updatedClient.setDateOfBirth(client.getDateOfBirth());
-		updatedClient.setContactInfo(client.getContactInfo());
-		updatedClient.setSocial(client.getSocial());
+		updatedClient.setPhone(client.getPhone());
+		updatedClient.setInstagram(client.getInstagram());
 		updatedClient.setEmail(client.getEmail());
-		updatedClient.setContactDate(client.getContactDate());
+
 
 		clientRepository.save(updatedClient);
 		return updatedClient;

@@ -2,6 +2,8 @@ package com.financemanagement.model;
 
 import java.util.Date;
 
+import com.financemanagement.enums.EntryType;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,33 +14,29 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "tb_client")
-public class Client {
-
+@Table(name = "tb_entry")
+public class Entry {
+	
 	@Id
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	@Column(nullable = false)
-	private String fullname;
 	
 	@Column
-	private Date dateOfBirth;
+	private Date entryDate;
 	
 	@Column
-	private String phone;
+	private Date paymentDate;
 	
 	@Column
-	private String instagram;
+	private String description;
 	
 	@Column
-	private String email;
+	private EntryType entryType;
 	
 	@Column
-	private String profession;
+	private double price;
 	
 	@Column
-	private String observation;
-	
+	private Client client;
 }
